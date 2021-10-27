@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: poppins;
+    height: 100vh;
+    display: grid;
+    overflow: hidden;
+    padding: 15px;
+    grid-template-columns: 7fr 3fr;
+    grid-template-rows: 0.2fr 8.8fr 1fr;
+    grid-template-areas: 
+        "title1 title2"
+        "col1 col2"
+        "lfooter rfooter";
+    gap: 15px;
+    background-color:rgb(173, 173, 173);
+    user-select: none;
+}
+
+.title1, .title2 {
+    background-color: rgb(201, 201, 201);
+    border: 3px solid black;
+    border-radius: 10px;
+    align-self: center;
+    justify-self: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px 15px;
+}
+
+.title1 {
+    grid-area: title1;
+}
+
+.title2 {
+    grid-area: title2;
+}
+
+h3 {
+    user-select: text;
+}
+
+.products {
+    height: 100%;
+    width: 100%;
+    grid-area: col1;
+    border: 3px solid black;
+    padding: 15px;
+    overflow: auto;
+    border-radius: 10px;
+    background-color: rgb(224, 224, 224);
+    display: grid;
+    align-content: flex-start;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* the px value is controlled by javascript to be set to the width of the biggest child */
+}
+
+.cart {
+    height: 100%;
+    width: 100%;
+    grid-area: col2;
+    padding: 15px;
+    border: 3px solid black;
+    overflow: auto;
+    border-radius: 10px;
+    background-color: rgb(224, 224, 224);
+}
+
+.wrapper, .cart-wrapper {
+    background-color: rgb(128, 192, 192);
+    border: 3px solid black;
+    border-radius: 20px; /* original: 10px. Set to 20px to match inner radius */
+    margin: 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.wrapper {
+    min-width: max-content;
+    min-height: 115px;
+}
+
+.wrapper h3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper h6 {
+    margin-top: 3px;
+}
+
+.wrapper button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+button {
+    padding: 5px 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:azure;
+}
+
+.lfooter, .rfooter {
+    background-color: rgb(224, 224, 224);
+    height: 100%;
+    width: 100%;
+    border: 3px solid black;
+    padding: 10px 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lfooter {
+    grid-area: lfooter;
+}
+
+.lfooter button {
+    font-weight: 700;
+}
+
+.rfooter {
+    grid-area: rfooter;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: darkblue;
+}
+
+.red {
+    color: rgb(223, 0, 0);
+}
+
+.delBtn {
+    font-weight: 700;
+    height: max-content;
+    width: max-content;
+    padding: 6px 10px;
+}
+
+.delBtn:hover {
+    background-color: rgb(223, 113, 113);
+}
+
+.checkoutBtn {
+    font-weight: 700;
+}
+
+.small {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.darkOverlay {
+    background-color: rgba(0, 0, 0, 0.473);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    place-content: center;
+    z-index: 10;
+}
+
+.popupContainer {
+    min-height: 250px; /* changes in JS depending on which popup button was clicked (addProductBtn/removeProductBtn) */
+    width: 450px;
+    padding: 20px;
+    border: 3px solid black;
+    overflow: auto;
+    border-radius: 10px;
+    background-color: rgb(224, 224, 224);
+}
+
+.row1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.row2 {
+    max-width: 300px;
+    margin-bottom: 25px;
+}
+
+.row2 > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.row2 + div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#submit {
+    margin-right: 20px;
+    min-width: max-content;
+}
+
+.addProductBtn {
+    margin-right: 20px;
+}
+
+.wordbreak {
+    word-break: break-all;
+}
+
+@media (max-width: 750px) {
+    body {
+        height:auto;
+        overflow: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;;
+        grid-template-areas: 
+            "title1"
+            "col1"
+            "lfooter"
+            "title2"
+            "col2"
+            "rfooter";
+    }
+
+    .cart {
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 939px) {
+    .addProductBtn {
+        margin-bottom: 10px;
+    }
+}

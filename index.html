@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="title1">Shop</div>
+    <div class="title2">Cart</div>
+    
+    <div class="products"></div>
+    <div class="cart"></div>
+    
+    <div class="lfooter">
+        <div>
+            <button class="addProductBtn green">Add products to shop</button>
+            <button class="removeProductBtn red">Remove products from shop</button>
+        </div>
+        <button class="addToAllStocksBtn">+1 stock to all products</button>
+    </div>
+    
+    <div class="rfooter">
+        <h3 class="totalPriceElement"></h3>
+        <button class=checkoutBtn>Checkout</button>
+    </div>
+    
+    <!-- Popup for addProductBtn AND removeProductBtn. -->
+    <div class="darkOverlay">    
+        <div class="popupContainer">
+            <div class="row1">
+                <h1 class="popupMenuTitleText">Add Product</h1> <!-- inner text changes based on which button was pressed (addProductBtn/removeProductBtn)-->
+                <button id="closePopupBtn" class="delBtn">X</button>
+            </div>
+            <div class="row2">
+                <div>
+                    <h4>Product Name:</h4>
+                    <input type="text" id="nameInput" maxlength="25">
+                </div>
+                <div id="productPriceRowPopupMenu">
+                    <h4>Product Price:</h4>
+                    <input type="text" id="priceInput" maxlength="10">
+                </div>
+                <div id="productStockRowPopupMenu">
+                    <h4>Product Stock:</h4>
+                    <input type="text" id="stockInput" maxlength="10">
+                </div>
+            </div>
+            <div>
+                <button id="submit">Submit</button>
+                <p class="information"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
